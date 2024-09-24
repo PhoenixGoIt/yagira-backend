@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_property_facilities",
+  "info": {
+    "displayName": "facility",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bath": {
+      "type": "boolean",
+      "required": true
+    },
+    "kitchen": {
+      "type": "boolean",
+      "required": true
+    },
+    "balcony": {
+      "type": "boolean",
+      "required": true
+    },
+    "wifi": {
+      "type": "boolean",
+      "required": true
+    },
+    "parkingArea": {
+      "type": "boolean",
+      "required": true
+    },
+    "smokingArea": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}
