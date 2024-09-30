@@ -66,14 +66,8 @@
       "configurable": false
     },
     "name": {
-      "type": "string"
-    },
-    "photo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
+      "type": "string",
+      "required": true
     }
   }
 }

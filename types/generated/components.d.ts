@@ -1,6 +1,68 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Struct, Schema } from '@strapi/strapi';
 
-export interface PropertyFacility extends Schema.Component {
+export interface SharedSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'address-book';
+    description: '';
+  };
+  attributes: {
+    files: Schema.Attribute.Media<'images', true>;
+  };
+}
+
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    name: 'Seo';
+    icon: 'allergies';
+    displayName: 'Seo';
+    description: '';
+  };
+  attributes: {
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    shareImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedRichText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rich_texts';
+  info: {
+    displayName: 'Rich text';
+    icon: 'align-justify';
+    description: '';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText;
+  };
+}
+
+export interface SharedQuote extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'indent';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedMedia extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media';
+  info: {
+    displayName: 'Media';
+    icon: 'file-video';
+  };
+  attributes: {
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface PropertyFacility extends Struct.ComponentSchema {
   collectionName: 'components_property_facilities';
   info: {
     displayName: 'facility';
@@ -8,18 +70,23 @@ export interface PropertyFacility extends Schema.Component {
     description: '';
   };
   attributes: {
-    bath: Attribute.Boolean & Attribute.Required;
-    kitchen: Attribute.Boolean & Attribute.Required;
-    balcony: Attribute.Boolean & Attribute.Required;
-    wifi: Attribute.Boolean & Attribute.Required;
-    parkingArea: Attribute.Boolean & Attribute.Required;
-    smokingArea: Attribute.Boolean & Attribute.Required;
+    bath: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    kitchen: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    balcony: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    wifi: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    parkingArea: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    smokingArea: Schema.Attribute.Boolean & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
+      'shared.slider': SharedSlider;
+      'shared.seo': SharedSeo;
+      'shared.rich-text': SharedRichText;
+      'shared.quote': SharedQuote;
+      'shared.media': SharedMedia;
       'property.facility': PropertyFacility;
     }
   }
