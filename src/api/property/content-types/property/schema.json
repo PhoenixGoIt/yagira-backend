@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "maxLength": 120,
+      "required": true,
+      "minLength": 2
+    },
+    "prevImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 400,
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "properties"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "rent",
+        "sale"
+      ]
+    }
+  }
+}
