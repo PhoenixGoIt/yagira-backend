@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "maxLength": 120,
       "required": true,
@@ -48,6 +48,18 @@
         "rent",
         "sale"
       ]
+    },
+    "facility": {
+      "type": "component",
+      "repeatable": false,
+      "component": "property.facility",
+      "required": true
+    },
+    "info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "property.information",
+      "required": true
     }
   }
 }

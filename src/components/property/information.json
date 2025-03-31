@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_property_information",
+  "info": {
+    "displayName": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "square": {
+      "type": "integer",
+      "required": true
+    },
+    "rooms": {
+      "type": "integer",
+      "required": true
+    },
+    "guestPolicy": {
+      "type": "enumeration",
+      "enum": [
+        "everyone",
+        "disabled",
+        "adult",
+        "child",
+        "family",
+        "pets"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "maxGuests": {
+      "type": "integer"
+    },
+    "roomType": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "luxury",
+        "studio"
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "apartment",
+        "house",
+        "hotel"
+      ],
+      "required": true
+    },
+    "bedType": {
+      "type": "enumeration",
+      "enum": [
+        "single bed",
+        "double bed"
+      ],
+      "required": true
+    },
+    "bedRooms": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
