@@ -86,6 +86,38 @@
       "relation": "oneToMany",
       "target": "api::property.property",
       "mappedBy": "users_permissions_user"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "occupation": {
+      "type": "string",
+      "required": true,
+      "default": "unknow",
+      "maxLength": 100
+    },
+    "adress": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "workEmail": {
+      "type": "email"
+    },
+    "profileImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
